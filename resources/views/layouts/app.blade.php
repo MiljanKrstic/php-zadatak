@@ -22,10 +22,6 @@
 <body>
     <div id="app">
         <nav>
-            <ul>
-
-            </ul>
-
             <!-- Right Side Of Navbar -->
             <ul>
                 <!-- Authentication Links -->

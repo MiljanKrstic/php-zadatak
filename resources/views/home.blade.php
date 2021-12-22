@@ -8,7 +8,8 @@
     @endif
 
     <div id="app">
-        <form id="form-id">
+        <form id="form-id" method="POST">
+            @csrf
             <div class=flex-container>
                 <div class="info">
                     <h1>Contacts</h1>

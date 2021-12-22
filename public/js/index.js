@@ -18,7 +18,7 @@ function makeInput(count) {
     const rightDiv = document.createElement('div');
     rightDiv.className = 'right-div';
 
-    const inputElement = `<input id="inp-left-one-${count}"> <input id="inp-left-two-${count}"> <br /> 
+    const inputElement = `<input type="text" name="first_name[]"> <input type="text" name="last_name[]"> <br /> 
     <button type="button" id="del-${count}" class="btn-style-all">Delete</button>`;
     leftDiv.innerHTML = inputElement;
 
@@ -57,8 +57,10 @@ function makeInput(count) {
         rightDiv.append(rightContainer);
 
         rightContainer.id = 'r-c' + countR;
-        inputRightOne.id = countR;
-        inputRightTwo.id = countR;
+        inputRightOne.name = 'number_type[]';
+        inputRightOne.type = 'text';
+        inputRightTwo.name = 'number[]';
+        inputRightTwo.type = 'text';
         delRightBtn.id = 'del-right' + countR;
 
         document.getElementById('del-right' + countR).addEventListener('click', () => {
