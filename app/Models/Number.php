@@ -19,9 +19,9 @@ class Number extends Model
         'contact_id'
     ];
 
-    public function contactModel()
+    public function numberModel()
     {
-        return this->belongesTo(Contact::class);
+        return this->belongsTo(Contact::class);
     }
 
 }

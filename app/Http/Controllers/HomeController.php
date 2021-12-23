@@ -36,6 +36,7 @@ class HomeController extends Controller
         $first_name = $request -> input('first_name');
         $last_name = $request -> input('last_name');
 
+
         for($count = 0; $count < count($first_name); $count++) {
             Contact::create([
                 'first_name' => $first_name[$count],
@@ -43,21 +44,20 @@ class HomeController extends Controller
                 'user_id' => auth()->id() 
             ]);
         }
-        return redirect('/');
-    }
 
-
-    public function storeNumberType(Request $request)
-    {
         $number_type = $request -> input('number_type');
         $number = $request -> input('number');
 
-        for($count = 0; $count < count($number); $count++) {
-            Number::create([
-                'number_type' => $number_type[$count],
-                'number' => $number[$count],
-            ]);
+        if($number_type) {
+            for($countN = 0; $countN < count($number_type); $countN++) {
+                Number::create([
+                    'number_type' => $number_type[$countN],
+                    'number' => $number[$countN],
+                    'contact_id' => Contact::where('first_name', $first_name)->first()->id
+                ]);
+            }
         }
+
         return redirect('/');
     }
 

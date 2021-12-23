@@ -41,4 +41,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function userOneThrough()
+    {
+        return $this->hasOneThrough(
+            Contact::class,
+            Number::class,
+            'user_id', 
+            'contact_id',
+            'id', 
+            'id' 
+        );
+    }
 }

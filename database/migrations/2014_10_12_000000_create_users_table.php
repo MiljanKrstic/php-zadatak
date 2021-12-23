@@ -35,7 +35,7 @@ class CreateUsersTable extends Migration
         Schema::create('numbers', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('contact_id');
-            $table->string('number_type');
+            $table->string('number_type')->nullable();
             $table->string('number');
             $table->timestamps();
             $table->foreign('contact_id')->references('id')->on('contacts')->onDelete('cascade');

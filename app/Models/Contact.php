@@ -21,6 +21,6 @@ class Contact extends Model
 
     public function contactModel()
     {
-        return this->hasMany(User::class);
+        return this->belongsTo(User::class);
     }
 }
